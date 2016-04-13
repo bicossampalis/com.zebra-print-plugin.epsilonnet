@@ -1,4 +1,4 @@
-package com.github.michael79bxl.zbtprinter;
+package com.zebra-print-plugin.epsilonnet;
 
 import java.io.IOException;
 

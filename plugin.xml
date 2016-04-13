@@ -20,7 +20,7 @@
       <config-file target="AndroidManifest.xml" parent="/*">
          <uses-permission android:name="android.permission.BLUETOOTH" />
       </config-file>
-	  <source-file src="src/android/it/zenitlab/cordova/plugins/zbtprinter/ZebraBluetoothPrinter.java" target-dir="src/android/it/zenitlab/cordova/plugins/zbtprinter" />
+	  <source-file src="src/android/it/zenitlab/cordova/plugins/zbtprinter/ZebraBluetoothPrinter.java" target-dir="src/android/com/zebra-print-plugin/epsilonnet" />
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="ZebraBluetoothPrinter">
