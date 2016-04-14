@@ -201,7 +201,7 @@ public class ZebraBluetoothPrinter extends CordovaPlugin {
 
 			cordova.getActivity().runOnUiThread(new Runnable() {
 				public void run() {
-					Toast toast = Toast.makeText(cordova.getActivity().getApplicationContext(), '10', Toast.LENGTH_SHORT);
+					Toast toast = Toast.makeText(cordova.getActivity().getApplicationContext(), "10", Toast.LENGTH_SHORT);
 					toast.show();
 				}
 			});
@@ -211,7 +211,7 @@ public class ZebraBluetoothPrinter extends CordovaPlugin {
 
 			cordova.getActivity().runOnUiThread(new Runnable() {
 				public void run() {
-					Toast toast = Toast.makeText(cordova.getActivity().getApplicationContext(), '11', Toast.LENGTH_SHORT);
+					Toast toast = Toast.makeText(cordova.getActivity().getApplicationContext(), "11", Toast.LENGTH_SHORT);
 					toast.show();
 				}
 			});
