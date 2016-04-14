@@ -8,6 +8,7 @@ import android.util.Log;
 import com.zebra.android.discovery.*;
 import com.zebra.sdk.comm.*;
 import com.zebra.sdk.printer.*;
+import android.widget.Toast;
 
 public class ZebraBluetoothPrinter extends CordovaPlugin {
 
