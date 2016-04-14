@@ -1,4 +1,4 @@
-package com.zebra-print-plugin.epsilonnet;
+package com.zebraprintplugin.epsilonnet;
 
 import java.io.IOException;
 
@@ -80,38 +80,26 @@ public class ZebraBluetoothPrinter extends CordovaPlugin {
                     // Instantiate insecure connection for given Bluetooth MAC Address.
                     Connection thePrinterConn = new BluetoothConnectionInsecure(mac);
 
-                    // Verify the printer is ready to print
-                    if (isPrinterReady(thePrinterConn)) {
+                    // Open the connection - physical connection is established here.
+					thePrinterConn.open();
 
-                        // Open the connection - physical connection is established here.
-                        thePrinterConn.open();
+					// Send the data to printer as a byte array.
+					//thePrinterConn.write("^XA^FO0,20^FD^FS^XZ".getBytes());
+					thePrinterConn.write(msg.getBytes());
 
-                        // Send the data to printer as a byte array.
-//                        thePrinterConn.write("^XA^FO0,20^FD^FS^XZ".getBytes());
-                        thePrinterConn.write(msg.getBytes());
+					// Make sure the data got to the printer before closing the connection
+					Thread.sleep(500);
 
+					// Close the insecure connection to release resources.
+					thePrinterConn.close();
+					callbackContext.success("Done");
 
-                        // Make sure the data got to the printer before closing the connection
-                        Thread.sleep(500);
-
-                        // Close the insecure connection to release resources.
-                        thePrinterConn.close();
-                        callbackContext.success("Done");
-                    } else {
-						callbackContext.error("Printer is not ready");
-					}
                 } catch (Exception e) {
                     // Handle communications error here.
                     callbackContext.error(e.getMessage());
                 }
             }
         }).start();
-    }
-
-    private Boolean isPrinterReady(Connection connection) throws ConnectionException, ZebraPrinterLanguageUnknownException {
-        Boolean isOK = true;
-        
-        return isOK;
     }
 }
 
